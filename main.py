@@ -30,10 +30,10 @@ class MyBot(commands.Bot):
     async def on_ready(self):
         # --- İSTEDİĞİN GÖRSELDEKİ DURUM AYARI BURASI ---
         # status: discord.Status.dnd -> Rahatsız Etmeyin (Kırmızı Simge)
-        # activity: discord.CustomActivity -> 👑 /mesutv44 DOSTLAR BAŞ TACI yazısı
+        # activity: discord.CustomActivity -> TTD ODUL🤍TTD Waxsi INC.
         await self.change_presence(
             status=discord.Status.dnd, 
-            activity=discord.CustomActivity(name="👑 /mesutv44 DOSTLAR BAŞ TACI")
+            activity=discord.CustomActivity(name="TTD ODUL🤍TTD Waxsi INC.")
         )
 
         print("\n" + "=" * 40)
@@ -71,3 +71,4 @@ if __name__ == "__main__":
         print("LÜTFEN ŞUNU YAPIN: Koyeb panelinde 'Environment Variables' kısmına gidin.")
         print("Key (İsim) kısmına: TOKEN")
         print("Value (Değer) kısmına: Discord'dan aldığınız tokenı yapıştırın.")
+

@@ -28,6 +28,14 @@ class MyBot(commands.Bot):
                         print(f"❌ Modül Hatası {filename}: {e}")
 
     async def on_ready(self):
+        # --- İSTEDİĞİN GÖRSELDEKİ DURUM AYARI BURASI ---
+        # status: discord.Status.dnd -> Rahatsız Etmeyin (Kırmızı Simge)
+        # activity: discord.CustomActivity -> 👑 /mesutv44 DOSTLAR BAŞ TACI yazısı
+        await self.change_presence(
+            status=discord.Status.dnd, 
+            activity=discord.CustomActivity(name="👑 /mesutv44 DOSTLAR BAŞ TACI")
+        )
+
         print("\n" + "=" * 40)
         print(f'✅ Bot Başlatıldı: {self.user.name}')
         print("=" * 40)
@@ -47,12 +55,10 @@ class MyBot(commands.Bot):
         except Exception as e:
             print(f"❌ Senkronizasyon Hatası: {e}")
 
-        await self.change_presence(activity=discord.Game(name="TTD Waxsi INC. Farkıyla"))
-
 # Botu oluştur
 bot = MyBot()
 
-# --- TOKEN AYARI (Burayı Değiştirme!) ---
+# --- TOKEN AYARI ---
 # Koyeb panelindeki "Environment Variables" kısmına eklediğin TOKEN'ı okur.
 TOKEN = os.getenv("TOKEN")
 
